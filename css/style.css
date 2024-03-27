@@ -1,0 +1,183 @@
+:root {
+
+    /*items*/
+    --lightRed: hsl(0, 100%, 67%);
+    --orangeYellow: hsl(39, 100%, 56%);
+    --greenTeal: hsl(166, 100%, 37%);
+    --cobaltBlue: hsl(234, 85%, 45%);
+    --font: hsl(241, 100%, 89%); 
+
+    --direction: column;
+}
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype"), 
+    url(../assets/fonts/static/HankenGrotesk-Bold.ttf) format("truetype"),
+    url(../assets/fonts/static/HankenGrotesk-ExtraBold.ttf) format("truetype");
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: "Hanken Grotesk";
+    font-size: 16px;
+    height: 100vh;
+}
+.flex {
+    display: flex;
+    flex-direction: var(--direction);
+}
+.container {
+    --direction: row;
+    width: 60rem;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 2rem;
+    box-shadow: 0 0 2rem rgb(0 0 0/ 20%);
+    text-align: center;
+}
+.data {
+    background: rgb(46,43,233);
+    background: linear-gradient(0deg, rgba(46,43,233,1) 5%, rgba(62,82,163,1) 100%);
+    border-radius: 2rem;
+    color: #FFF;
+    text-align: center;
+    padding: 2.4rem;
+    width: 50%;
+}
+.data .data__title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2.4rem;
+    color: var(--font);
+}
+.data__stats {
+    --direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 20rem;
+    background: rgb(36,33,202);
+    background: linear-gradient(0deg, rgba(36,33,202,0) 14%, rgba(78,33,202,1) 100%);
+    border-radius: 50%;
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 2.4rem auto;
+}
+.data__stat--small {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--font);
+}
+.data__text {
+    line-height: 1.5;
+    margin-top: 2.4rem;
+    color: var(--font);
+    font-size: 1.8rem;
+}
+.summary {
+    --direction: column;
+    padding: 2.4rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
+}
+.item__container img {
+    margin-right: .6rem;
+}
+.summary__item {
+    --direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    font-weight: 700;
+}
+.summary__item:nth-of-type(1) {
+    color: var(--lightRed);
+    background-color: rgba(255, 87, 87, 0.216);
+}
+.summary__item:nth-of-type(2) {
+    color: var(--orangeYellow);
+    background-color: rgba(255, 176, 31, 0.216);
+    
+}
+.summary__item:nth-of-type(3) {
+    color: var(--greenTeal);
+    background-color: rgba(0, 189, 145, 0.216);
+}
+.summary__item:nth-of-type(4) {
+    color: var(--cobaltBlue);
+    background-color: rgba(17, 37, 212, 0.216);
+}
+.summary__stats {
+    color: hsl(224, 30%, 27%);
+}
+.summary__stats--lighter {
+    color: hsla(224, 30%, 27%, 0.603);
+}
+.button {
+    width: 100%;
+    background: rgb(78,33,202);
+    padding: 1.5rem;
+    margin-top: 2.4rem;
+    border-radius: 3rem;
+    position: relative;
+    transition: background .3s;
+}
+.button__link {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+}
+.button:hover {
+    background: rgb(48, 59, 90);
+}
+.attribution {
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: hsl(228, 45%, 44%);
+}
+.attribution p:last-child {
+    margin: 1rem auto;
+}
+@media screen and (max-width: 698px) {
+    body {
+        align-items: center;
+    }
+    .container {
+        --direction:column;
+        border-radius: 0;
+        margin: 0 auto;
+        width: 45rem;
+    }
+    .data {
+        border-radius: 0rem 0rem 2rem 2rem;
+    }
+    .summary, .data {
+        width: 100%;
+    }
+    .summary__item {
+        margin-bottom: 2rem;
+    }
+    .summary__item:nth-of-type(1) {
+        margin-top: 2.4rem;
+    }
+    .attribution {
+        --direction: row;
+        margin: 1rem auto;
+    }
+    .attribution p:last-child {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 850px) and (orientation: landscape) {
+    .container {
+        margin: 2rem auto;
+    }
+}
